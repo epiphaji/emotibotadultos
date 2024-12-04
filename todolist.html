@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+  <div class="todo-container">
+    <!-- Imagen centrada como encabezado -->
+    <div class="imagen-encabezado">
+      <img src="todolist.png" alt="To-Do List Logo">
+    </div>
+    <h1>Registrar Tarea</h1>
+    <form id="todo-form">
+      <label for="tarea">Nueva Tarea:</label>
+      <input type="text" id="tarea" name="tarea" placeholder="Escribe tu tarea..." required>
+      <button type="button" onclick="guardarTarea()">Guardar Tarea</button>
+    </form>
+    <button onclick="window.location.href='tareas.html'" class="btn-ver-tareas">Ver Tareas</button>
+  </div>
+
+  <script>
+    function guardarTarea() {
+      const tareaInput = document.getElementById("tarea");
+      const tarea = tareaInput.value.trim();
+
+      if (tarea !== "") {
+        // Guardar en localStorage
+        const tareas = JSON.parse(localStorage.getItem("tareas")) || [];
+        tareas.push({ nombre: tarea, completada: false });
+        localStorage.setItem("tareas", JSON.stringify(tareas));
+        alert("Tarea registrada exitosamente.");
+        tareaInput.value = ""; // Limpiar campo
+      } else {
+        alert("Por favor, escribe una tarea.");
+      }
+    }
+  </script>
+</body>
+</html>

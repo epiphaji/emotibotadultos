@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tareas</title>
+  <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+  <div class="todo-container">
+    <h1>Lista de Tareas</h1>
+    <ul id="lista-tareas"></ul>
+    <button onclick="window.location.href='index.html'">Volver</button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const listaTareas = document.getElementById("lista-tareas");
+      const tareas = JSON.parse(localStorage.getItem("tareas")) || [];
+
+      if (tareas.length === 0) {
+        listaTareas.innerHTML = "<li>No hay tareas registradas.</li>";
+      } else {
+        tareas.forEach((tarea, index) => {
+          const li = document.createElement("li");
+          li.textContent = tarea.nombre + (tarea.completada ? " ✅" : "");
+          listaTareas.appendChild(li);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

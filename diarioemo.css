@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #d4a4e6, #f3d4fc);
+  margin: 0;
+  padding: 0;
+}
+
+.registro-container, .graficas-container {
+  width: 90%;
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #8b5cb1;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+select, textarea, button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #8b5cb1;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #6c4291;
+}
+
+.imagen-encabezado {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.btn-graficas, .btn-regresar {
+  background-color: #6c4291;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-graficas:hover, .btn-regresar:hover {
+  background-color: #4a3065;
+}
+
+.graficas-container canvas {
+  margin: 20px 0;
+}

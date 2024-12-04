@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario TEA - Emotibot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f0fc;
+            color: #4a124e;
+        }
+        header {
+            background-color: #7d2a8e;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        main {
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .question {
+            margin: 20px 0;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid #7d2a8e;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .btn-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        button {
+            background-color: #7d2a8e;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #590d6a;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #4a124e;
+        }
+        .result.pass {
+            color: #4CAF50;
+        }
+        .result.fail {
+            color: #E53935;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cuestionario TEA</h1>
+    </header>
+    <main>
+        <div class="image-container">
+            <img src="cuesrionario.png" alt="Imagen representativa del cuestionario">
+        </div>
+        <h2>Evalúa tus características</h2>
+        <p>Responde las siguientes preguntas seleccionando "Sí" o "No". Al final, podrás ver tu puntuación.</p>
+        <form id="quizForm">
+            <!-- Pregunta 1 -->
+            <div class="question">
+                <label>1. ¿Sueles tener dificultades para entender el lenguaje corporal de los demás?</label>
+                <label><input type="radio" name="q1" value="1"> Sí</label>
+                <label><input type="radio" name="q1" value="0"> No</label>
+            </div>
+            <!-- Pregunta 2 -->
+            <div class="question">
+                <label>2. ¿Te resulta incómodo mantener contacto visual durante las conversaciones?</label>
+                <label><input type="radio" name="q2" value="1"> Sí</label>
+                <label><input type="radio" name="q2" value="0"> No</label>
+            </div>
+            <!-- Pregunta 3 -->
+            <div class="question">
+                <label>3. ¿Te gustan las rutinas y te cuesta adaptarte a cambios inesperados?</label>
+                <label><input type="radio" name="q3" value="1"> Sí</label>
+                <label><input type="radio" name="q3" value="0"> No</label>
+            </div>
+            <!-- Pregunta 4 -->
+            <div class="question">
+                <label>4. ¿Te resulta difícil interpretar el tono emocional en las conversaciones?</label>
+                <label><input type="radio" name="q4" value="1"> Sí</label>
+                <label><input type="radio" name="q4" value="0"> No</label>
+            </div>
+            <!-- Pregunta 5 -->
+            <div class="question">
+                <label>5. ¿Prefieres actividades solitarias en lugar de sociales?</label>
+                <label><input type="radio" name="q5" value="1"> Sí</label>
+                <label><input type="radio" name="q5" value="0"> No</label>
+            </div>
+            <div class="btn-container">
+                <button type="button" onclick="calculateScore()">Ver Resultados</button>
+            </div>
+        </form>
+        <div id="result" class="result"></div>
+    </main>
+    <script>
+        function calculateScore() {
+            const form = document.getElementById('quizForm');
+            const resultDiv = document.getElementById('result');
+            let score = 0;
+
+            // Recorremos las preguntas y sumamos los puntos
+            for (let i = 1; i <= 5; i++) {
+                const answer = form.querySelector(`input[name="q${i}"]:checked`);
+                if (answer) {
+                    score += parseInt(answer.value);
+                }
+            }
+
+            // Mostramos el resultado
+            if (score >= 3) {
+                resultDiv.textContent = `Puntuación: ${score}. Podrías estar dentro del espectro del autismo. Te recomendamos consultar a un especialista.`;
+                resultDiv.className = "result fail";
+            } else {
+                resultDiv.textContent = `Puntuación: ${score}. Es poco probable que estés dentro del espectro del autismo.`;
+                resultDiv.className = "result pass";
+            }
+        }
+    </script>
+</body>
+</html>

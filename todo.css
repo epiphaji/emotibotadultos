@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #d4a4e6, #f3d4fc);
+  margin: 0;
+  padding: 0;
+}
+
+.todo-container {
+  width: 90%;
+  max-width: 400px;
+  margin: 50px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Alinea contenido en el centro */
+}
+
+.imagen-encabezado img {
+  width: 100px; /* Tamaño ajustable de la imagen */
+  height: auto;
+  margin-bottom: 15px;
+}
+
+h1 {
+  text-align: center;
+  color: #8b5cb1;
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #333;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #8b5cb1;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #6c4291;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li.completada span {
+  text-decoration: line-through;
+  color: #777;
+}
+
+.btn-completar {
+  background-color: #36A2EB;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-completar:hover {
+  background-color: #1c79b6;
+}
+
+.btn-regresar, .btn-ver-tareas {
+  background-color: #6c4291;
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-regresar:hover, .btn-ver-tareas:hover {
+  background-color: #4a3065;
+}
+
+  

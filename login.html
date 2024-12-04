@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Emotibot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <!-- Logo -->
+        <img src="LogoEmotiBot.png" alt="Logo Emotibot" class="logo">
+
+        <!-- Texto de Bienvenida -->
+        <h1>¡BIENVENID@!</h1>
+
+        <!-- Formulario de Inicio de Sesión -->
+        <form>
+            <div class="input-group">
+                <label for="username">
+                    <img src="user-icon.jpg" alt="Usuario" class="icon">
+                </label>
+                <input type="text" id="username" name="username" placeholder="Usuario" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">
+                    <img src="lock-icon.png" alt="Contraseña" class="icon">
+                </label>
+                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+            </div>
+
+            <button type="button" onclick="login()">INICIAR SESIÓN</button>
+            
+        </form>
+    </div>
+
+    <script>
+        // Simulación de validación de usuario
+        function login() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+    
+            // Usuarios y contraseñas válidos
+            const validUsers = [
+                { username: "usuario1", password: "contraseña123" },
+                { username: "JimenaGarcia", password: "1234" }
+            ];
+
+            // Validar si el usuario y contraseña coinciden
+            const userExists = validUsers.some(user => user.username === username && user.password === password);
+
+            if (userExists) {
+                window.location.href = "menu.html"; // Redirige al menú principal
+            } else {
+                alert("Usuario o contraseña incorrectos");
+            }
+        }
+    </script>
+    
+</body>
+</html>

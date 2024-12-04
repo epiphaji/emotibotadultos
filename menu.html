@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Adultos</title>
+    <link rel="stylesheet" href="menu_principal.css">
+</head>
+<body>
+    <div class="welcome-banner">
+        ¡Bienvenid@ de nuevo, <span id="user-name">[Nombre del adulto]</span>!
+    </div>
+    <div class="menu-container">
+        <div class="menu-item">
+            <img src="smile.png" alt="Diario de emociones" class="menu-icon">
+            <a href="diarioemo.html" class="menu-button">Diario de emociones</a>
+        </div>
+        <div class="menu-item">
+            <img src="shield.png" alt="Manejo de crisis" class="menu-icon">
+            <a href="recursos.html" class="menu-button">Manejo de crisis</a>
+        </div>
+        <div class="menu-item">
+            <img src="check.jpg" alt="To-do list" class="menu-icon">
+            <a href="todolist.html" class="menu-button">To-do list</a>
+        </div>
+        <div class="menu-item">
+            <img src="notepad.jpg" alt="Cuestionario TEA" class="menu-icon">
+            <a href="cuestionario.html" class="menu-button">Cuestionario TEA</a>
+        </div>
+    </div>
+    <script>
+        // Ejemplo para simular datos de la base de datos.
+        const userName = "Jimena García"; // Este valor debería provenir de la base de datos.
+        document.getElementById('user-name').textContent = userName;
+    </script>
+</body>
+</html>

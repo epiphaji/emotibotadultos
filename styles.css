@@ -1,0 +1,93 @@
+/* Estilo del Fondo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #0c43e8, #8a00ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Contenedor Principal */
+.login-container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Logo */
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Título */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #FFE57F;
+}
+
+/* Grupo de Entrada */
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    opacity: 0.8;
+}
+
+/* Estilo para los campos de entrada */
+input {
+    width: 90%; /* Ajustar ancho */
+    padding: 12px 10px 12px 40px; /* Margen interno */
+    margin: auto; /* Centrar */
+    display: block; /* Asegurar que el elemento se comporte como bloque */
+    border: none; /* Eliminar borde */
+    border-bottom: 2px solid #FFE57F; /* Línea decorativa inferior */
+    background: transparent; /* Fondo transparente */
+    font-size: 14px;
+    color: #fff; /* Texto blanco */
+    outline: none; /* Eliminar el contorno de foco */
+}
+
+/* Cambiar color de la línea inferior al interactuar */
+input:focus {
+    border-bottom: 2px solid #FFD700; /* Color dorado al seleccionar */
+}
+
+/* Ajustes del contenedor de los campos */
+.input-group {
+    position: relative;
+    width: 100%; /* Tomar el ancho total del contenedor */
+    margin-bottom: 20px;
+    display: flex; /* Alinear ícono con campo */
+    align-items: center;
+}
+
+/* Ajuste de los íconos */
+.icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 5%; /* Ajuste del margen izquierdo */
+    color: #fff;
+    opacity: 0.8;
+}

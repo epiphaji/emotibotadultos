@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gráficas de Emociones</title>
+  <link rel="stylesheet" href="diarioemo.css">
+</head>
+<body>
+  <div class="graficas-container">
+    <h1>Gráficas de Emociones</h1>
+
+    <!-- Primera gráfica: Cantidad de emociones registradas por mes -->
+    <h2>Cantidad de Emociones Registradas por Mes</h2>
+    <canvas id="graficaEmociones"></canvas>
+
+    <!-- Segunda gráfica: Emociones más registradas durante el mes -->
+    <h2>Emociones Más Registradas Durante el Mes</h2>
+    <canvas id="graficaTopEmociones"></canvas>
+
+    <!-- Botón para regresar al diario -->
+    <button onclick="window.location.href='index.html'" class="btn-regresar">Regresar al Diario</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Primera gráfica: Cantidad de emociones registradas por mes
+    const ctx1 = document.getElementById('graficaEmociones').getContext('2d');
+    const graficaEmociones = new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril'], // Ejemplo de meses
+        datasets: [{
+          label: 'Cantidad de emociones',
+          data: [5, 8, 3, 7], // Reemplazar con datos reales de la BD
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        }
+      }
+    });
+
+    // Segunda gráfica: Emociones más registradas durante el mes
+    const ctx2 = document.getElementById('graficaTopEmociones').getContext('2d');
+    const graficaTopEmociones = new Chart(ctx2, {
+      type: 'pie',
+      data: {
+        labels: ['Felicidad', 'Tristeza', 'Ira', 'Ansiedad', 'Calma'], // Tipos de emociones
+        datasets: [{
+          label: 'Emociones más registradas',
+          data: [20, 15, 10, 5, 12], // Ejemplo de datos, reemplazar con datos reales de la BD
+          backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
+

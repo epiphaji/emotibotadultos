@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tareas Pendientes</title>
+  <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+  <div class="todo-container">
+    <h1>Tareas Pendientes</h1>
+    <ul id="lista-tareas">
+      <!-- Las tareas se generarán dinámicamente -->
+    </ul>
+    <button onclick="window.location.href='index.html'" class="btn-regresar">Regresar</button>
+  </div>
+
+  <script>
+    function cargarTareas() {
+      const listaTareas = document.getElementById("lista-tareas");
+      const tareas = JSON.parse(localStorage.getItem("tareas")) || [];
+
+      listaTareas.innerHTML = ""; // Limpiar lista
+      tareas.forEach((tarea, index) => {
+        const li = document.createElement("li");
+        li.className = tarea.completada ? "completada" : "";
+
+        li.innerHTML = `
+          <span>${tarea.nombre}</span>
+          <button onclick="marcarCompletada(${index})" class="btn-completar">
+            ${tarea.completada ? "Completada" : "Marcar como Completada"}
+          </button>
+        `;
+
+        listaTareas.appendChild(li);
+      });
+    }
+
+    function marcarCompletada(index) {
+      const tareas = JSON.parse(localStorage.getItem("tareas")) || [];
+      tareas[index].completada = !tareas[index].completada;
+      localStorage.setItem("tareas", JSON.stringify(tareas));
+      cargarTareas(); // Actualizar la lista
+    }
+
+    // Cargar tareas al iniciar la página
+    window.onload = cargarTareas;
+  </script>
+</body>
+</html>

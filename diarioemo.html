@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Emociones</title>
+  <link rel="stylesheet" href="diarioemo.css">
+</head>
+<body>
+  <div class="registro-container">
+    <!-- Imagen añadida -->
+    <img src="emociones.png" alt="Imagen emocional" class="imagen-encabezado">
+    <h1>Registrar Emoción</h1>
+    <form id="registro-form" method="POST" action="registro_emocion.php">
+      <label for="emocion">Emoción:</label>
+      <select id="emocion" name="emocion" required>
+        <option value="Felicidad">Felicidad</option>
+        <option value="Tristeza">Tristeza</option>
+        <option value="Ira">Ira</option>
+        <option value="Ansiedad">Ansiedad</option>
+        <option value="Calma">Calma</option>
+      </select>
+
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" name="descripcion" placeholder="Describe tu emoción..." required></textarea>
+
+      <button type="submit">Guardar Emoción</button>
+    </form>
+    <!-- Botón para mostrar gráficas -->
+    <button onclick="window.location.href='graficas.html'" class="btn-graficas">Mi progreso</button>
+  </div>
+</body>
+</html> 
